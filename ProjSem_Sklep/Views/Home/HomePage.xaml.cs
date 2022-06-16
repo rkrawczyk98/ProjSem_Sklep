@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjSem_Sklep_Lib.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +19,40 @@ namespace ProjSem_Sklep.Views.Home
     /// </summary>
     public partial class HomePage : Page
     {
-        public HomePage()
+        private MainWindow _mainWindow;
+        private RepositoryHolder _repoHolder;
+
+        public HomePage(MainWindow mainWin, RepositoryHolder repoHolder)
         {
+            _repoHolder = repoHolder;
+            _mainWindow = mainWin;
+            DataContext = this;
             InitializeComponent();
+        }
+
+        private void Koszyk_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Produkty_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Zamowienia_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Uzytkownicy_Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

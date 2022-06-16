@@ -112,26 +112,30 @@
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
-                             Click="BtnClickPgShoppingCart"/>
+                             Click="Koszyk_Button_Click"
+                             Name="Koszyk_Button"/>
                 <RadioButton Content="Produkty"
                              Height ="50"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
-                             Click="BtnClickPgProducts"/>
+                             Click="Produkty_Click"
+                             Name="Produkty"/>
                 <RadioButton Content="Zamówienia"
                              Height ="50"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
-                             Click="BtnClickPgOrders"/>
+                             Click="Zamowienia_Button_Click"
+                             Name="Zamowienia_Button"/>
                 <RadioButton Content="Użytkownicy"
                              Height ="50"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
-                             Click="BtnClickPgUsers"/>
-
+                             Click="Uzytkownicy_Button_Click" 
+                             Checked="RadioButton_Checked"
+                             Name="Uzytkownicy_Button"/>
             </StackPanel>
 
             <TextBox Width="250"

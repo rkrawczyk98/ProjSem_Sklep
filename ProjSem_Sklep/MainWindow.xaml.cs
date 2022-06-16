@@ -26,8 +26,6 @@ namespace ProjSem_Sklep
     {
         private RepositoryHolder _repoHolder;
         private DbContext _dbContext;
-        public RepositoryHolder RepoHolder => _repoHolder;
-
 
         public MainWindow()
         {
@@ -37,7 +35,7 @@ namespace ProjSem_Sklep
                                                new UserRepository(_dbContext),
                                                new ProdOrdRepository(_dbContext));
             InitializeComponent();
-            this.Content = new LoginPage(RepoHolder, this);
+            this.Content = new LoginPage(_repoHolder, this);
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿using ProjSem_Sklep_Lib.Repositories;
+﻿using ProjSem_Sklep.Authentication;
+using ProjSem_Sklep.Models;
+using ProjSem_Sklep.Views.Home;
+using ProjSem_Sklep_Lib.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,23 +24,46 @@ namespace ProjSem_Sklep.Views.Login_Register
     {
         private MainWindow _mainWindow;
         private RepositoryHolder _repoHolder;
-        public RepositoryHolder RepoHolder => _repoHolder;
+
+        public string Login { get; set; }
+
+        public string Password { get; set; }
+
+        public static CredentialsHolder CredentialsHolder;
 
         public LoginPage(RepositoryHolder repoHolder, MainWindow mainWin)
         {
             _repoHolder = repoHolder;
             _mainWindow = mainWin;
+            DataContext = this;
             InitializeComponent();
         }
 
         private void Zaloguj_Button_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                var account = _repoHolder.UserRepo.FindUser(Login, Password);
+                if (account == null)
+                {
+                    MessageBox.Show("Nie znaleziono konta takiego konta", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                var userVM = new UserViewModel() { ID = account.ID, IsAdmin = account.IsAdmin };
+                CredentialsHolder = new CredentialsHolder(userVM);
+                _mainWindow.Content = new HomePage(_mainWindow, _repoHolder);
+            }
+            catch (Exception)
+            {
 
+                MessageBox.Show("Nie znaleziono konta takiego konta", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
         }
 
         private void UtworzKonto_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            _mainWindow.Content = new RegisterPage(_mainWindow, _repoHolder);
         }
     }
 }

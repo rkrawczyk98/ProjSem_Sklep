@@ -80,14 +80,17 @@
     </Page.Resources>
     <Border Background="#272537">
         <Grid>
-            <Button Content="Utwórz konto" Margin="160,0,440,44" FontSize="20" Foreground="White" Background="#353340" Height="50" VerticalAlignment="Bottom"/>
-            <Button Content="Anuluj" Margin="0,0,160,44" Click="BtnAnuluj" FontSize="20" Foreground="White" Background="#353340" HorizontalAlignment="Right" Width="220" Height="50" VerticalAlignment="Bottom"/>
-            <PasswordBox HorizontalAlignment="Left" Margin="360,238,0,0" VerticalAlignment="Top" Width="250" Height="40" FontSize="24" Style="{StaticResource ModernPasswordBox}"/>
-            <PasswordBox HorizontalAlignment="Left" Margin="360,157,0,0" VerticalAlignment="Top" Width="250" Height="40" FontSize="24" Style="{StaticResource ModernPasswordBox}"/>
+            <Button Name="UtworzKonto_Button" Click="UtworzKonto_Button_Click" Content="Utwórz konto" Margin="160,0,440,44" FontSize="20" Foreground="White" Background="#353340" Height="50" VerticalAlignment="Bottom"/>
+            <Button Name="Anuluj_Button" Content="Anuluj" Margin="0,0,160,44" Click="Anuluj_Button_Click" FontSize="20" Foreground="White" Background="#353340" HorizontalAlignment="Right" Width="220" Height="50" VerticalAlignment="Bottom"/>
+            <TextBox HorizontalAlignment="Left" Margin="360,238,0,0" VerticalAlignment="Top" Width="250" Height="40" FontSize="24" Style="{StaticResource ModernTextBox}"
+                     Text="{Binding RepeatPassword, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox HorizontalAlignment="Left" Margin="360,157,0,0" VerticalAlignment="Top" Width="250" Height="40" FontSize="24" Style="{StaticResource ModernTextBox}"
+                     Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"/>
             <Label x:Name="EtykietaNazwUzyt" Content="Nazwa użytkownika" HorizontalAlignment="Left" Margin="120,80,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
             <Label Content="Hasło" HorizontalAlignment="Right" Margin="0,158,558,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
             <Label Content="Powtórz hasło" HorizontalAlignment="Right" Margin="0,240,521,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
-            <TextBox HorizontalAlignment="Left" Margin="360,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Height="40" FontSize="24" Style="{StaticResource ModernTextBox}" />
+            <TextBox HorizontalAlignment="Left" Margin="360,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Height="40" FontSize="24" Style="{StaticResource ModernTextBox}"
+                     Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"/>
 
         </Grid>
     </Border>

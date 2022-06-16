@@ -31,6 +31,8 @@ namespace ProjSem_Sklep.Views.Login_Register
 
         public static CredentialsHolder CredentialsHolder;
 
+        public static Koszyk Koszyk;
+
         public LoginPage(RepositoryHolder repoHolder, MainWindow mainWin)
         {
             _repoHolder = repoHolder;

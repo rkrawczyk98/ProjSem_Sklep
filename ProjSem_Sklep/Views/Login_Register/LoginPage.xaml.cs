@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjSem_Sklep_Lib.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +19,25 @@ namespace ProjSem_Sklep.Views.Login_Register
     /// </summary>
     public partial class LoginPage : Page
     {
-        public LoginPage()
+        private MainWindow _mainWindow;
+        private RepositoryHolder _repoHolder;
+        public RepositoryHolder RepoHolder => _repoHolder;
+
+        public LoginPage(RepositoryHolder repoHolder, MainWindow mainWin)
         {
+            _repoHolder = repoHolder;
+            _mainWindow = mainWin;
             InitializeComponent();
+        }
+
+        private void Zaloguj_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UtworzKonto_Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

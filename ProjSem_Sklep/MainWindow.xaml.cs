@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjSem_Sklep.Views.Login_Register;
+using ProjSem_Sklep_Lib.Context;
+using ProjSem_Sklep_Lib.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +24,20 @@ namespace ProjSem_Sklep
     /// </summary>
     public partial class MainWindow : Window
     {
+        private RepositoryHolder _repoHolder;
+        private DbContext _dbContext;
+        public RepositoryHolder RepoHolder => _repoHolder;
+
+
         public MainWindow()
         {
+            _dbContext = new InMemoryDbContext();
+            _repoHolder = new RepositoryHolder(new OrderRepository(_dbContext),
+                                               new ProductRepository(_dbContext),
+                                               new UserRepository(_dbContext),
+                                               new ProdOrdRepository(_dbContext));
             InitializeComponent();
+            this.Content = new LoginPage(RepoHolder, this);
         }
     }
 }

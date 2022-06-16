@@ -13,10 +13,6 @@ namespace ProjSem_Sklep_Lib.Repositories
         {
         }
 
-        /// <summary>
-        /// Zwraca wszystkich studentów razem z ich powiązanymi grupami
-        /// </summary>
-        /// <returns>IEnumerable encji typu Student</returns>
         public override IEnumerable<Product> GetAll()
         {
             return _dbSet.Include(x => x.Orders).ToList();

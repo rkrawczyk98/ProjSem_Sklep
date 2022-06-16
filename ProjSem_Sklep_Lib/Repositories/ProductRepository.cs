@@ -19,6 +19,8 @@ namespace ProjSem_Sklep_Lib.Repositories
         }
     }
 
+
+
     public class RepositoryHolder
     {
         private readonly AccRepository _accRepo;

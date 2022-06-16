@@ -38,6 +38,7 @@ namespace ProjSem_Sklep.Views.Login_Register
             _repoHolder = repoHolder;
             _mainWindow = mainWin;
             DataContext = this;
+            Koszyk = new Koszyk();
             InitializeComponent();
         }
 

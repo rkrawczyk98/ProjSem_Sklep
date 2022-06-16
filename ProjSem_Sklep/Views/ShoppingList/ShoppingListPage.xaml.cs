@@ -1,4 +1,7 @@
-﻿using ProjSem_Sklep_Lib.Repositories;
+﻿using ProjSem_Sklep.Views.Orders;
+using ProjSem_Sklep.Views.Product;
+using ProjSem_Sklep.Views.Users;
+using ProjSem_Sklep_Lib.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -33,6 +36,26 @@ namespace ProjSem_Sklep.Views.ShoppingList
         private void Zamow_Button_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Koszyk_Button_Click(object sender, RoutedEventArgs e)
+        {
+            _mainWindow.Content = new ShoppingListPage(_mainWindow, _repoHolder);
+        }
+
+        private void Produkty_Click(object sender, RoutedEventArgs e)
+        {
+            _mainWindow.Content = new ProductListPage(_mainWindow, _repoHolder);
+        }
+
+        private void Zamowienia_Button_Click(object sender, RoutedEventArgs e)
+        {
+            _mainWindow.Content = new OrdersListPage(_mainWindow, _repoHolder);
+        }
+
+        private void Uzytkownicy_Button_Click(object sender, RoutedEventArgs e)
+        {
+            _mainWindow.Content = new UsersListPage(_mainWindow, _repoHolder);
         }
     }
 }

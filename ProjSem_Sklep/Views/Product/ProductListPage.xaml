@@ -8,29 +8,178 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ProductListPage">
 
-    <ListBox Name="AccountsListBox" HorizontalContentAlignment="Stretch" 
-                         SelectionMode="Extended" SelectionChanged="AccountList_SelectionChanged" Grid.ColumnSpan="6"
-                         ItemsSource="{Binding Products, UpdateSourceTrigger=PropertyChanged}">
-        <ListBox.ItemTemplate>
-            <DataTemplate>
-                <Grid Margin="5">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" HorizontalAlignment="Center" Text="{Binding ID}" />
-                    <TextBlock Grid.Column="1" HorizontalAlignment="Center">
-                        <TextBlock.Text>
-                            <MultiBinding StringFormat="{}{0} {1}">
-                                <Binding Path="Name"/>
-                                <Binding Path="Surname"/>
-                            </MultiBinding>
-                        </TextBlock.Text>
-                    </TextBlock>
-                    <TextBlock Grid.Column="2" HorizontalAlignment="Center" Text="{Binding IsAdmin}" />
+    <Page.Resources>
+        <Style TargetType="{x:Type TextBox}"
+          x:Key="SearchBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border CornerRadius="10"
+                        Background="#353340">
+
+                            <Grid>
+                                <Rectangle StrokeThickness="1"/>
+                                <TextBox Margin="1"
+                                 BorderThickness="0"
+                                 Background="Transparent"
+                                 VerticalContentAlignment="Center"
+                                 Padding="5"
+                                 Foreground="#CFCFCF"
+                                 x:Name="SearchBox"/>
+                                <TextBlock IsHitTestVisible="False"
+                                       Text="Wyszukaj"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Margin="10,0,0,0"
+                                       FontSize="11"
+                                       Foreground="DarkGray"
+                                       Grid.Column="1">
+
+                                    <TextBlock.Style>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Text, ElementName=SearchBox}" Value="">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                            <Setter Property="Visibility" Value="Hidden"/>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
+           TargetType="{x:Type RadioButton}"
+           x:Key="MenuButtonTheme">
+            <Style.Setters>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="RadioButton">
+                            <Grid VerticalAlignment="Stretch"
+                              HorizontalAlignment="Stretch"
+                              Background="{TemplateBinding Background}">
+
+                                <TextBlock Text="{TemplateBinding Property=Content}"
+                                       VerticalAlignment="Center"
+                                       Margin="50,0,0,0"/>
+
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+            </Style.Setters>
+
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Background" Value="#22202f"/>
+                </Trigger>
+            </Style.Triggers>
+
+        </Style>
+    </Page.Resources>
+
+    <Border Background="#272537">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   Foreground="White"
+                   FontSize="22"
+                   Margin="5,0,0,0"><Run Language="pl-pl" Text="Projekt Semestralny"/></TextBlock>
+
+            <StackPanel Grid.Row="1">
+
+                <RadioButton Content="Koszyk"
+                             Height ="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Click="Koszyk_Button_Click"
+                             Name="Koszyk_Button"/>
+                <RadioButton Content="Produkty"
+                             Height ="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Click="Produkty_Click"
+                             Name="Produkty"/>
+                <RadioButton Content="Zamówienia"
+                             Height ="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Click="Zamowienia_Button_Click"
+                             Name="Zamowienia_Button"/>
+                <RadioButton Content="Użytkownicy"
+                             Height ="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Click="Uzytkownicy_Button_Click" 
+                             Name="Uzytkownicy_Button"/>
+            </StackPanel>
+            <TextBox Width="250"
+                     Height="40"
+                     VerticalContentAlignment="Center"
+                     HorizontalAlignment="Left"
+                     Margin="5"
+                     Grid.Column="1"
+                     Style="{StaticResource SearchBox}"/>
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <ListBox Grid.Row="0" Grid.Column="0"
+                    Name="ShoppingList_ListBox" HorizontalContentAlignment="Stretch" 
+                         SelectionMode="Extended" Grid.ColumnSpan="6"
+                         ItemsSource="{Binding ShoppingList, UpdateSourceTrigger=PropertyChanged}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" HorizontalAlignment="Center" Text="{Binding ID}" />
+                                    <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding Quantity}"/>
+                                    <TextBlock Grid.Column="2" HorizontalAlignment="Center" Text="{Binding Price}" />
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </Grid>
-            </DataTemplate>
-        </ListBox.ItemTemplate>
-    </ListBox>
+
+                <Button Name="Zamow_Button" Click="Zamow_Button_Click" Grid.Column="0" Grid.Row="1" Width="50" Height="30">Zamow</Button>
+            </Grid>
+
+        </Grid>
+
+    </Border>
 </Page>

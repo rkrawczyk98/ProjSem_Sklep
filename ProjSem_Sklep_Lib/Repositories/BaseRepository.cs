@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ProjSem_Sklep_Lib.Repositories
 {
-    public class BaseRepository<T> : IRepository<T> where T : class
+    public abstract class BaseRepository<T> : IRepository<T> where T : class
     {
         protected readonly DbSet<T> _dbSet;
         protected readonly DbContext _dbContext;

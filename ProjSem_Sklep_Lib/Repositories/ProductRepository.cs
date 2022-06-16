@@ -19,43 +19,31 @@ namespace ProjSem_Sklep_Lib.Repositories
         }
     }
 
-
-
     public class RepositoryHolder
     {
-        private readonly AccRepository _accRepo;
-        private readonly TeaRepository _teaRepo;
-        private readonly StudRepository _studRepo;
-        private readonly GruRepository _gruRepo;
-        private readonly GruStudRepository _gruStudRepo;
-        private readonly GruTeaRepository _gruTeaRepo;
+        private OrderRepository _ordRepo;
+        private ProductRepository _prodRepo;
+        private UserRepository _userRepo;
+        private ProdOrdRepository _prodOrdRepo;
 
-        public AccRepository AccRepo => _accRepo;
+        public OrderRepository OrdRepo => _ordRepo;
 
-        public TeaRepository TeaRepo => _teaRepo;
+        public ProductRepository ProdRepo => _prodRepo;
 
-        public StudRepository StudRepo => _studRepo;
+        public UserRepository UserRepo => _userRepo;
 
-        public GruRepository GruRepo => _gruRepo;
+        public ProdOrdRepository ProdOrdRepo => _prodOrdRepo;
 
 
-        public GruStudRepository GruStudRepo => _gruStudRepo;
-
-        public GruTeaRepository GruTeaRepo => _gruTeaRepo;
-
-        public RepoPack(AccRepository accRepo,
-                        TeaRepository teaRepo,
-                        StudRepository studRepo,
-                        GruRepository gruRepo,
-                          GruStudRepository gruStudRepo,
-                           GruTeaRepository gruTeaRepo)
+        public RepositoryHolder(OrderRepository ordRepo,
+                        ProductRepository prodRepo,
+                        UserRepository userRepo,
+                        ProdOrdRepository prodOrdRepo)
         {
-            _accRepo = accRepo;
-            _teaRepo = teaRepo;
-            _studRepo = studRepo;
-            _gruRepo = gruRepo;
-            _gruStudRepo = gruStudRepo;
-            _gruTeaRepo = gruTeaRepo;
+            _ordRepo = ordRepo;
+            _prodRepo = prodRepo;
+            _userRepo = userRepo;
+            _prodOrdRepo = prodOrdRepo;
         }
     }
 }

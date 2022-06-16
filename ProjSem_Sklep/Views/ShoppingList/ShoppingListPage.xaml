@@ -175,7 +175,8 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
                 </Grid>
-                
+
+                <Button Name="Zamow_Button" Click="Zamow_Button_Click" Grid.Column="0" Grid.Row="1" Width="50" Height="30">Zamow</Button>
             </Grid>
 
         </Grid>

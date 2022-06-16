@@ -29,5 +29,10 @@ namespace ProjSem_Sklep.Views.ShoppingList
             DataContext = this;
             InitializeComponent();
         }
+
+        private void Zamow_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

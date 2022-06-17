@@ -71,5 +71,20 @@ namespace ProjSem_Sklep.Views.Product
         {
             _mainWindow.Content = new UsersListPage(_mainWindow, _repoHolder);
         }
+
+        private void Usuna_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Edytuj_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Dodaj_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

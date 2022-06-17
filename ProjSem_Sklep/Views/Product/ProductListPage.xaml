@@ -177,6 +177,18 @@
                 </Grid>
 
                 <Button Name="DodajDoKoszyka_Button" Click="DodajDoKoszyka_Button_Click" Grid.Column="0" Grid.Row="1" Width="90" Height="30">Do koszyka</Button>
+
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Button Name="Usuna_Button" Click="Usuna_Button_Click" Grid.Column="0" Grid.Row="1" Width="90" Height="30">Usun</Button>
+                    <Button Name="Dodaj_Button" Click="Dodaj_Button_Click" Grid.Row="0" Width="90" Height="30">Dodaj</Button>
+                    <Button Name="Edytuj_Button" Click="Edytuj_Button_Click" Grid.Row="2" Width="90" Height="30">Edytuj</Button>
+                </Grid>
             </Grid>
 
         </Grid>

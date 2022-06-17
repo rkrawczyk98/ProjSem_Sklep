@@ -42,7 +42,9 @@ namespace ProjSem_Sklep.Views.Users
         private void Usun_Button_Click(object sender, RoutedEventArgs e)
         {
             _repoHolder.UserRepo.Remove(SelectedUser);
+            UserList.Remove(SelectedUser);
             _repoHolder.UserRepo.Save();
+            UserList_ListBox.Items.Refresh();
         }
 
         private void UserList_ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

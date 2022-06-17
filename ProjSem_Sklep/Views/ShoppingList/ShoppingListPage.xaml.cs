@@ -1,5 +1,6 @@
 ﻿using ProjSem_Sklep.Views.Orders;
 using ProjSem_Sklep.Views.Product;
+using EFProduct = ProjSem_Sklep_Lib.Models.Product;
 using ProjSem_Sklep.Views.Users;
 using ProjSem_Sklep_Lib.Repositories;
 using System;
@@ -14,6 +15,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ProjSem_Sklep.Views.Login_Register;
+using ProjSem_Sklep_Lib.Models;
 
 namespace ProjSem_Sklep.Views.ShoppingList
 {
@@ -25,17 +28,35 @@ namespace ProjSem_Sklep.Views.ShoppingList
         private MainWindow _mainWindow;
         private RepositoryHolder _repoHolder;
 
+        public List<EFProduct> ShoppingList { get; set; }
+
         public ShoppingListPage(MainWindow mainWin, RepositoryHolder repoHolder)
         {
             _repoHolder = repoHolder;
             _mainWindow = mainWin;
             DataContext = this;
+            ShoppingList = LoginPage.Koszyk.Products;
             InitializeComponent();
         }
 
         private void Zamow_Button_Click(object sender, RoutedEventArgs e)
         {
+            
+            int priceSum = 0;
 
+            foreach (var item in ShoppingList)
+            {
+                priceSum += (int)item.Price * item.Quantity;
+            }
+            var order = new Order() { Date = DateTime.Now.ToString(), SumPrice = priceSum };
+            _repoHolder.OrdRepo.Add(order);
+            _repoHolder.OrdRepo.Save();
+
+            foreach (var item in ShoppingList)
+            {
+                _repoHolder.ProdOrdRepo.Add(new ProductOrder() { OrderId = _repoHolder.OrdRepo.GetLast().ID, ProductId = item.ID });
+            }
+            _repoHolder.ProdOrdRepo.Save();
         }
 
         private void Koszyk_Button_Click(object sender, RoutedEventArgs e)

@@ -1,4 +1,7 @@
-﻿using ProjSem_Sklep_Lib.Models;
+﻿using ProjSem_Sklep.Views.Orders;
+using ProjSem_Sklep.Views.Product;
+using ProjSem_Sklep.Views.ShoppingList;
+using ProjSem_Sklep_Lib.Models;
 using ProjSem_Sklep_Lib.Repositories;
 using System;
 using System.Collections.Generic;

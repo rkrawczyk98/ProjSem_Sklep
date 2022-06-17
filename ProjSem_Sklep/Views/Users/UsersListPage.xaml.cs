@@ -48,5 +48,25 @@ namespace ProjSem_Sklep.Views.Users
             var item = (User)listbox.SelectedItem;
             SelectedUser = item;
         }
+
+        private void Koszyk_Button_Click(object sender, RoutedEventArgs e)
+        {
+            _mainWindow.Content = new ShoppingListPage(_mainWindow, _repoHolder);
+        }
+
+        private void Produkty_Click(object sender, RoutedEventArgs e)
+        {
+            _mainWindow.Content = new ProductListPage(_mainWindow, _repoHolder);
+        }
+
+        private void Zamowienia_Button_Click(object sender, RoutedEventArgs e)
+        {
+            _mainWindow.Content = new OrdersListPage(_mainWindow, _repoHolder);
+        }
+
+        private void Uzytkownicy_Button_Click(object sender, RoutedEventArgs e)
+        {
+            _mainWindow.Content = new UsersListPage(_mainWindow, _repoHolder);
+        }
     }
 }

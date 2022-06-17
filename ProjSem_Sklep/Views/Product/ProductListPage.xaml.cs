@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ProjSem_Sklep.Views.Login_Register;
+using ProjSem_Sklep.Views.ShoppingList;
+using ProjSem_Sklep.Views.Orders;
+using ProjSem_Sklep.Views.Users;
 
 namespace ProjSem_Sklep.Views.Product
 {
@@ -47,6 +50,26 @@ namespace ProjSem_Sklep.Views.Product
             var listbox = (ListBox)sender;
             var item = (EFProduct)listbox.SelectedItem;
             SelectedProduct = item;
+        }
+
+        private void Koszyk_Button_Click(object sender, RoutedEventArgs e)
+        {
+            _mainWindow.Content = new ShoppingListPage(_mainWindow, _repoHolder);
+        }
+
+        private void Produkty_Click(object sender, RoutedEventArgs e)
+        {
+            _mainWindow.Content = new ProductListPage(_mainWindow, _repoHolder);
+        }
+
+        private void Zamowienia_Button_Click(object sender, RoutedEventArgs e)
+        {
+            _mainWindow.Content = new OrdersListPage(_mainWindow, _repoHolder);
+        }
+
+        private void Uzytkownicy_Button_Click(object sender, RoutedEventArgs e)
+        {
+            _mainWindow.Content = new UsersListPage(_mainWindow, _repoHolder);
         }
     }
 }

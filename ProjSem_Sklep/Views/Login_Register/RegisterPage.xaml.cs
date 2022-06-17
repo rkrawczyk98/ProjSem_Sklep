@@ -48,8 +48,17 @@ namespace ProjSem_Sklep.Views.Login_Register
 
         private void UtworzKonto_Button_Click(object sender, RoutedEventArgs e)
         {
-            _repoHolder.UserRepo.Add(new User() { Login = this.Login, Password = this.Password, IsAdmin = this.IsAdmin });
-            _repoHolder.UserRepo.Save();
+            var account = _repoHolder.UserRepo.FindUser(Login);
+            if (Password != RepeatPassword)
+                MessageBox.Show("Hasla nie sa takie same!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            else if (account == null)
+            {
+                _repoHolder.UserRepo.Add(new User() { Login = this.Login, Password = this.Password, IsAdmin = this.IsAdmin });
+                _repoHolder.UserRepo.Save();
+            }
+            else if(account.Login == Login)
+                MessageBox.Show("Konto o takiej nazwie juz istnieje!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            
         }
     }
 }

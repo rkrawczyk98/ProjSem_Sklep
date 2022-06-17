@@ -12,7 +12,12 @@ namespace ProjSem_Sklep_Lib.Repositories
 
         public User? FindUser(string login, string password)
         {
-            return GetAll().SingleOrDefault(x => x.Login == login && x.Password == password);
+            return GetAll().FirstOrDefault(x => x.Login == login && x.Password == password);
+        }
+
+        public User? FindUser(string login)
+        {
+            return GetAll().FirstOrDefault(x => x.Login == login);
         }
     }
 }

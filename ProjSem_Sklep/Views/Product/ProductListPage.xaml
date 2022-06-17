@@ -158,6 +158,7 @@
                     <ListBox Grid.Row="0" Grid.Column="0"
                     Name="ProductList_ListBox" HorizontalContentAlignment="Stretch" 
                          SelectionMode="Extended" Grid.ColumnSpan="6"
+                             SelectionChanged="ProductList_ListBox_SelectionChanged"
                          ItemsSource="{Binding ProductList, UpdateSourceTrigger=PropertyChanged}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>

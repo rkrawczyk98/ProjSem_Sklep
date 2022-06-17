@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ProjSem_Sklep.Views.Login_Register;
 
 namespace ProjSem_Sklep.Views.Product
 {
@@ -25,6 +26,8 @@ namespace ProjSem_Sklep.Views.Product
 
         public List<EFProduct> ProductList { get; set; }
 
+        public EFProduct SelectedProduct { get; set; }
+
         public ProductListPage(MainWindow mainWin, RepositoryHolder repoHolder)
         {
             _repoHolder = repoHolder;
@@ -36,7 +39,14 @@ namespace ProjSem_Sklep.Views.Product
 
         private void DodajDoKoszyka_Button_Click(object sender, RoutedEventArgs e)
         {
+            LoginPage.Koszyk.Products.Add(SelectedProduct);
+        }
 
+        private void ProductList_ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var listbox = (ListBox)sender;
+            var item = (EFProduct)listbox.SelectedItem;
+            SelectedProduct = item;
         }
     }
 }

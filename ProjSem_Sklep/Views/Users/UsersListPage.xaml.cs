@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjSem_Sklep_Lib.Models;
+using ProjSem_Sklep_Lib.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +20,32 @@ namespace ProjSem_Sklep.Views.Users
     /// </summary>
     public partial class UsersListPage : Page
     {
-        public UsersListPage()
+        private MainWindow _mainWindow;
+        private RepositoryHolder _repoHolder;
+
+        public List<User> UserList { get; set; }
+
+        public User SelectedUser { get; set; }
+
+        public UsersListPage(MainWindow mainWin, RepositoryHolder repoHolder)
         {
+            _repoHolder = repoHolder;
+            _mainWindow = mainWin;
+            DataContext = this;
+            UserList = (List<User>)_repoHolder.UserRepo.GetAll();
             InitializeComponent();
+        }
+
+        private void Usun_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UserList_ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var listbox = (ListBox)sender;
+            var item = (User)listbox.SelectedItem;
+            SelectedUser = item;
         }
     }
 }

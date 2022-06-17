@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjSem_Sklep_Lib.Models;
+using ProjSem_Sklep_Lib.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,8 +20,17 @@ namespace ProjSem_Sklep.Views.Orders
     /// </summary>
     public partial class OrdersListPage : Page
     {
-        public OrdersListPage()
+        private MainWindow _mainWindow;
+        private RepositoryHolder _repoHolder;
+
+        public List<Order> OrderList { get; set; }
+
+        public OrdersListPage(MainWindow mainWin, RepositoryHolder repoHolder)
         {
+            _repoHolder = repoHolder;
+            _mainWindow = mainWin;
+            DataContext = this;
+            OrderList = (List<Order>)_repoHolder.OrdRepo.GetAll();
             InitializeComponent();
         }
     }

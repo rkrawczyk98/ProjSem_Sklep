@@ -79,12 +79,16 @@ namespace ProjSem_Sklep.Views.Product
 
         private void Edytuj_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            var productWindow = new ProductWindow();
+            productWindow.Content = new EditProductPage(this, _repoHolder, SelectedProduct);
+            productWindow.Show();
         }
 
         private void Dodaj_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            var productWindow = new ProductWindow();
+            productWindow.Content = new AddNewProductPage(this, _repoHolder, SelectedProduct);
+            productWindow.Show();
         }
     }
 }

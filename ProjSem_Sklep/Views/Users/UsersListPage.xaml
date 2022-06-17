@@ -176,7 +176,8 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                 </Grid>
-                <Button Name="Usun_Button" Click="Usun_Button_Click" Grid.Column="0" Grid.Row="1" Width="50" Height="30">Usun</Button>
+                <Button Name="Usun_Button" Click="Usun_Button_Click" Grid.Column="0" Grid.Row="1" Width="120" Height="40">Usun użytkownika</Button>
+                <Button Name="IsAdmin_Button" Click="IsAdmin_Button_Click" Grid.Column="0" Grid.Row="1" Width="120" Height="40" HorizontalAlignment="Right" Margin="0,0,10,0">Zmień typ konta</Button>
             </Grid>
 
         </Grid>

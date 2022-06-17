@@ -29,6 +29,7 @@ namespace ProjSem_Sklep.Views.ShoppingList
         private RepositoryHolder _repoHolder;
 
         public List<EFProduct> ShoppingList { get; set; }
+        public EFProduct SelectedProduct { get; set; }
 
         public ShoppingListPage(MainWindow mainWin, RepositoryHolder repoHolder)
         {
@@ -59,6 +60,13 @@ namespace ProjSem_Sklep.Views.ShoppingList
             _repoHolder.ProdOrdRepo.Save();
         }
 
+        private void ProductList_ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var listbox = (ListBox)sender;
+            var item = (EFProduct)listbox.SelectedItem;
+            SelectedProduct = item;
+        }
+
         private void Koszyk_Button_Click(object sender, RoutedEventArgs e)
         {
             _mainWindow.Content = new ShoppingListPage(_mainWindow, _repoHolder);
@@ -77,6 +85,12 @@ namespace ProjSem_Sklep.Views.ShoppingList
         private void Uzytkownicy_Button_Click(object sender, RoutedEventArgs e)
         {
             _mainWindow.Content = new UsersListPage(_mainWindow, _repoHolder);
+        }
+
+        private void Usun_Button_Click(object sender, RoutedEventArgs e)
+        {
+            ShoppingList.Remove(SelectedProduct);
+            LoginPage.Koszyk.Products.Remove(SelectedProduct);
         }
     }
 }

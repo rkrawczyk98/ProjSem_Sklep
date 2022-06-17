@@ -73,5 +73,14 @@ namespace ProjSem_Sklep.Views.Users
         {
             _mainWindow.Content = new UsersListPage(_mainWindow, _repoHolder);
         }
+
+        private void IsAdmin_Button_Click(object sender, RoutedEventArgs e)
+        {
+            var user = _repoHolder.UserRepo.FindUser(SelectedUser.Login);
+            if (user.IsAdmin == false)
+                user.IsAdmin = true;
+            else user.IsAdmin = false;
+            _repoHolder.UserRepo.Save();
+        }
     }
 }

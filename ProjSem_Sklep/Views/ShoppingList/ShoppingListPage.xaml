@@ -158,6 +158,7 @@
                     <ListBox Grid.Row="0" Grid.Column="0"
                     Name="ShoppingList_ListBox" HorizontalContentAlignment="Stretch" 
                          SelectionMode="Extended" Grid.ColumnSpan="6"
+                             SelectionChanged="ProductList_ListBox_SelectionChanged"
                          ItemsSource="{Binding ShoppingList, UpdateSourceTrigger=PropertyChanged}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
@@ -176,7 +177,8 @@
                 </ListBox>
                 </Grid>
 
-                <Button Name="Zamow_Button" Click="Zamow_Button_Click" Grid.Column="0" Grid.Row="1" Width="50" Height="30">Zamow</Button>
+                <Button Name="Zamow_Button" Click="Zamow_Button_Click" Grid.Column="0" Grid.Row="1" Width="120" Height="40" HorizontalAlignment="Right" Margin="0,0,10,0">Złóż zamówienie</Button>
+                <Button Name="Usun_Button" Click="Usun_Button_Click" Grid.Column="0" Grid.Row="1" Width="120" Height="40" HorizontalAlignment="Center" Margin="0,0,10,0">Usuń przedmiot</Button>
             </Grid>
 
         </Grid>

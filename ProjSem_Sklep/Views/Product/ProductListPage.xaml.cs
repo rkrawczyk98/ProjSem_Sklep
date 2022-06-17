@@ -72,9 +72,11 @@ namespace ProjSem_Sklep.Views.Product
             _mainWindow.Content = new UsersListPage(_mainWindow, _repoHolder);
         }
 
-        private void Usuna_Button_Click(object sender, RoutedEventArgs e)
+        private void Usun_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            ProductList.Remove(SelectedProduct);
+            _repoHolder.ProdRepo.Remove(SelectedProduct);
+            _repoHolder.ProdRepo.Save();
         }
 
         private void Edytuj_Button_Click(object sender, RoutedEventArgs e)

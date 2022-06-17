@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjSem_Sklep_Lib.Repositories;
+using System;
+using EFProduct = ProjSem_Sklep_Lib.Models.Product;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +20,23 @@ namespace ProjSem_Sklep.Views.Product
     /// </summary>
     public partial class ProductListPage : Page
     {
-        public ProductListPage()
+        private MainWindow _mainWindow;
+        private RepositoryHolder _repoHolder;
+
+        public List<EFProduct> ProductList { get; set; }
+
+        public ProductListPage(MainWindow mainWin, RepositoryHolder repoHolder)
         {
+            _repoHolder = repoHolder;
+            _mainWindow = mainWin;
+            DataContext = this;
+            ProductList = (List<EFProduct>)_repoHolder.ProdRepo.GetAll();
             InitializeComponent();
+        }
+
+        private void DodajDoKoszyka_Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

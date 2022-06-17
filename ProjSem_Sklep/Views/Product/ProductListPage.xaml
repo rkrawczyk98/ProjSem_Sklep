@@ -156,9 +156,9 @@
 
                 <Grid Grid.Row="0" Grid.Column="0">
                     <ListBox Grid.Row="0" Grid.Column="0"
-                    Name="ShoppingList_ListBox" HorizontalContentAlignment="Stretch" 
+                    Name="ProductList_ListBox" HorizontalContentAlignment="Stretch" 
                          SelectionMode="Extended" Grid.ColumnSpan="6"
-                         ItemsSource="{Binding ShoppingList, UpdateSourceTrigger=PropertyChanged}">
+                         ItemsSource="{Binding ProductList, UpdateSourceTrigger=PropertyChanged}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid Margin="5">
@@ -169,14 +169,13 @@
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Grid.Column="0" HorizontalAlignment="Center" Text="{Binding ID}" />
                                     <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding Quantity}"/>
-                                    <TextBlock Grid.Column="2" HorizontalAlignment="Center" Text="{Binding Price}" />
                                 </Grid>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
                 </Grid>
 
-                <Button Name="Zamow_Button" Click="Zamow_Button_Click" Grid.Column="0" Grid.Row="1" Width="50" Height="30">Zamow</Button>
+                <Button Name="DodajDoKoszyka_Button" Click="DodajDoKoszyka_Button_Click" Grid.Column="0" Grid.Row="1" Width="90" Height="30">Do koszyka</Button>
             </Grid>
 
         </Grid>

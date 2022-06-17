@@ -43,18 +43,18 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
                 <TextBlock Text="Nazwa produktu" FontSize="20" HorizontalAlignment="Center"/>
-                <TextBox x:Name="productName" Width="250" Height="30" FontSize="14" Text="{Binding ProductName, Mode=TwoWay}" Style="{StaticResource ModernTextBox}"/>
+                <TextBox x:Name="productName" Width="250" Height="30" FontSize="14" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}"/>
                 <TextBlock Text="Nazwa producenta" FontSize="20" HorizontalAlignment="Center"/>
-                <TextBox x:Name="producerName" Width="250" Height="30" FontSize="14" Text="{Binding ProducerName, Mode=TwoWay}" Style="{StaticResource ModernTextBox}"/>
+                <TextBox x:Name="producerName" Width="250" Height="30" FontSize="14" Text="{Binding ProducerName, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}"/>
                 <TextBlock Text="Nazwa kategorii" FontSize="20" HorizontalAlignment="Center"/>
-                <TextBox x:Name="categoryName" Width="250" Height="30" FontSize="14" Text="{Binding CategoryName, Mode=TwoWay}" Style="{StaticResource ModernTextBox}"/>
+                <TextBox x:Name="categoryName" Width="250" Height="30" FontSize="14" Text="{Binding CategoryName, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}"/>
                 <TextBlock Text="Cena" FontSize="20" HorizontalAlignment="Center"/>
-                <TextBox x:Name="price" Width="250" Height="30" FontSize="14" Text="{Binding Price, Mode=TwoWay}" Style="{StaticResource ModernTextBox}"/>
+                <TextBox x:Name="price" Width="250" Height="30" FontSize="14" Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}"/>
                 <TextBlock Text="Stan magazynowy" FontSize="20" HorizontalAlignment="Center"/>
-                <TextBox x:Name="stockstatus" Width="250" Height="30" FontSize="14" Text="{Binding StockStatus, Mode=TwoWay}" Style="{StaticResource ModernTextBox}"/>
+                <TextBox x:Name="stockstatus" Width="250" Height="30" FontSize="14" Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Content="Zapisz" Margin="0,20,0,5" Padding="10" />
-                    <Button Content="Anuluj" Margin="15,20,0,5" Padding="10" />
+                    <Button Name="Zapisz_Button" Click="Zapisz_Button_Click" Content="Zapisz" Margin="0,20,0,5" Padding="10" />
+                    <Button Name="Anuluj_Button" Click="Anuluj_Button_Click" Content="Anuluj" Margin="15,20,0,5" Padding="10" />
                 </StackPanel>
 
             </StackPanel>

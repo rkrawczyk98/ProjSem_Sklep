@@ -49,6 +49,7 @@ namespace ProjSem_Sklep.Views.Login_Register
         private void UtworzKonto_Button_Click(object sender, RoutedEventArgs e)
         {
             _repoHolder.UserRepo.Add(new User() { Login = this.Login, Password = this.Password, IsAdmin = this.IsAdmin });
+            _repoHolder.UserRepo.Save();
         }
     }
 }

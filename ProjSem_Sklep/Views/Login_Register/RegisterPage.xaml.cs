@@ -42,7 +42,7 @@ namespace ProjSem_Sklep.Views.Login_Register
         private void Anuluj_Button_Click(object sender, RoutedEventArgs e)
         {
             DataContext = _mainWindow;
-            _mainWindow = _mainWindow;
+            _mainWindow.Content = new LoginPage(_repoHolder, _mainWindow);
 
         }
 

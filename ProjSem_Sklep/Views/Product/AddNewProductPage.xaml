@@ -42,18 +42,18 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
                 <TextBlock Text="Nazwa produktu" FontSize="20" HorizontalAlignment="Center"/>
-                <TextBox Width="250" Height="30" FontSize="14" Text="{Binding NewProductName, Mode=TwoWay}" Style="{StaticResource ModernTextBox}"/>
+                <TextBox Width="250" Height="30" FontSize="14" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}"/>
                 <TextBlock Text="Nazwa producenta" FontSize="20" HorizontalAlignment="Center"/>
-                <TextBox Width="250" Height="30" FontSize="14" Text="{Binding NewProducerName, Mode=TwoWay}" Style="{StaticResource ModernTextBox}"/>
+                <TextBox Width="250" Height="30" FontSize="14" Text="{Binding NewProducerName, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}"/>
                 <TextBlock Text="Nazwa kategorii" FontSize="20" HorizontalAlignment="Center"/>
-                <TextBox Width="250" Height="30" FontSize="14" Text="{Binding NewCategoryName, Mode=TwoWay}" Style="{StaticResource ModernTextBox}"/>
+                <TextBox Width="250" Height="30" FontSize="14" Text="{Binding NewCategoryName, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}"/>
                 <TextBlock Text="Cena" FontSize="20" HorizontalAlignment="Center"/>
-                <TextBox Width="250" Height="30" FontSize="14" Text="{Binding NewPrice, Mode=TwoWay}" Style="{StaticResource ModernTextBox}"/>
+                <TextBox Width="250" Height="30" FontSize="14" Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}"/>
                 <TextBlock Text="Stan magazynowy" FontSize="20" HorizontalAlignment="Center"/>
-                <TextBox Width="250" Height="30" FontSize="14" Text="{Binding NewStockStatus, Mode=TwoWay}" Style="{StaticResource ModernTextBox}"/>
+                <TextBox Width="250" Height="30" FontSize="14" Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Content="Zapisz" Margin="0,20,0,5" Padding="10" Command="{Binding AddNewProductCommand}"/>
-                    <Button Content="Anuluj" Margin="15,20,0,5" Padding="10" />
+                    <Button Name="Zapisz_Button" Click="Zapisz_Button_Click" Content="Zapisz" Margin="0,20,0,5" Padding="10" />
+                    <Button Name="Anuluj_Button" Click="Anuluj_Button_Click" Content="Anuluj" Margin="15,20,0,5" Padding="10" />
                 </StackPanel>
 
             </StackPanel>

@@ -167,9 +167,9 @@
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" HorizontalAlignment="Center" Text="{Binding ID}" />
-                                    <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding Date}"/>
-                                    <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding SumPrice}"/>
+                                    <TextBlock Grid.Column="0" HorizontalAlignment="Center" Text="{Binding ID, StringFormat='Numer zamówienia: {0}'}" Margin="10,0,10,0"/>
+                                    <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding Date, StringFormat='Data złożenia: {0}'}" Margin="10,0,10,0"/>
+                                    <TextBlock Grid.Column="2" HorizontalAlignment="Center" Text="{Binding SumPrice, StringFormat='Całkowita kwota: {0}'}" Margin="10,0,10,0"/>
                                 </Grid>
                             </DataTemplate>
                         </ListBox.ItemTemplate>

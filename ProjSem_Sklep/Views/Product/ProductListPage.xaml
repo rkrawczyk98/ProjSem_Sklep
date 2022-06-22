@@ -155,7 +155,7 @@
                 </Grid.RowDefinitions>
 
                 <Grid Grid.Row="0" Grid.Column="0">
-                    <ListBox Grid.Row="0" Grid.Column="0"
+                    <ListBox Grid.Row="1" Grid.Column="0"
                     Name="ProductList_ListBox" HorizontalContentAlignment="Stretch" 
                          SelectionMode="Extended" Grid.ColumnSpan="6"
                              SelectionChanged="ProductList_ListBox_SelectionChanged"
@@ -168,8 +168,9 @@
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" HorizontalAlignment="Center" Text="{Binding ID}" />
-                                    <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding Quantity}"/>
+                                    <TextBlock Grid.Column="0" HorizontalAlignment="Center" Text="{Binding Name, StringFormat='Nazwa produktu: {0}'}" />
+                                    <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding Quantity, StringFormat='Stan magazynowy: {0}'}"/>
+                                    <TextBlock Grid.Column="2" HorizontalAlignment="Center" Text="{Binding Price, StringFormat='Cena: {0}'}" />
                                 </Grid>
                             </DataTemplate>
                         </ListBox.ItemTemplate>

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProjSem_Sklep_Lib.Models
 {
-    public abstract class BaseModel : IEntity
+    public interface IEntity 
     {
         public int ID { get; set; }
     }

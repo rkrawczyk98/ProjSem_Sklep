@@ -24,7 +24,7 @@ namespace ProjSem_Sklep.Views.Product
         private ProductWindow _prodWin;
         private RepositoryHolder _repoHolder;
 
-        public string Name { get; set; }
+        public string NewName { get; set; }
 
         public int Quantity { get; set; }
 
@@ -41,7 +41,7 @@ namespace ProjSem_Sklep.Views.Product
 
         private void Zapisz_Button_Click(object sender, RoutedEventArgs e)
         {
-            var nowyProdukt = new EFProduct() { Name = this.Name, Quantity = this.Quantity, Price = this.Price };
+            var nowyProdukt = new EFProduct() { Name = this.NewName, Quantity = this.Quantity, Price = this.Price };
             _repoHolder.ProdRepo.Add(nowyProdukt);
             _repoHolder.ProdRepo.Save();
             DataContext = _mainWin;

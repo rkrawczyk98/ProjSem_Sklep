@@ -1,6 +1,6 @@
 ﻿namespace ProjSem_Sklep_Lib.Models
 {
-    public class ProductOrder
+    public class ProductOrder 
     {
         public int ProductId { get; set; }
         public Product Product { get; set; }

@@ -15,5 +15,10 @@ namespace ProjSem_Sklep_Lib.Repositories
         {
             return _dbSet.Include(x => x.Products).ToList();
         }    
+
+        public override Order GetLast()
+        {
+            return _dbSet.OrderBy(x => x.ID).Last();
+        }
     }
 }

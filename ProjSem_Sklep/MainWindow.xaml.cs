@@ -29,7 +29,7 @@ namespace ProjSem_Sklep
 
         public MainWindow()
         {
-            _dbContext = new InMemoryDbContext();
+            _dbContext = new ProjSemDbContext();
             _repoHolder = new RepositoryHolder(new OrderRepository(_dbContext),
                                                new ProductRepository(_dbContext),
                                                new UserRepository(_dbContext),

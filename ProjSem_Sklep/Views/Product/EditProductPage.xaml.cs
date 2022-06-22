@@ -24,7 +24,7 @@ namespace ProjSem_Sklep.Views.Product
         private ProductWindow _prodWin;
         private RepositoryHolder _repoHolder;
 
-        public string Name { get; set; }
+        public string newName { get; set; }
 
         public int Quantity { get; set; }
 
@@ -44,7 +44,7 @@ namespace ProjSem_Sklep.Views.Product
 
         private void Zapisz_Button_Click(object sender, RoutedEventArgs e)
         {
-            SelectedProduct.Name = Name;
+            SelectedProduct.Name = newName;
             SelectedProduct.Quantity = Quantity;
             SelectedProduct.Price = Price;
             _repoHolder.ProdRepo.Save();

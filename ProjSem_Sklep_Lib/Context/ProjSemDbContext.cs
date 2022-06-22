@@ -9,7 +9,7 @@ namespace ProjSem_Sklep_Lib.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=ProjSem_Sklep;Trusted_Connection=True;trustServerCertificate=true");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\LocalInstance;Database=ProjSem_Sklep;Trusted_Connection=True;MultipleActiveResultSets=true;trustServerCertificate=true");
         }
     }
 }

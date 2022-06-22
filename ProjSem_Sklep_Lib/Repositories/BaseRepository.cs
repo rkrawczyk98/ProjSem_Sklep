@@ -32,14 +32,16 @@ namespace ProjSem_Sklep_Lib.Repositories
             return _dbSet.Find(id);
         }
 
-        public T GetLast()
+        public virtual T GetLast()
         {
             return _dbSet.Last();
         }
 
         public virtual void Remove(T item)
         {
-            _dbSet.Remove(item);
+            if(item != null)
+                _dbSet.Remove(item);
+            
         }
 
         public virtual void Save()

@@ -42,7 +42,7 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
                 <TextBlock Text="Nazwa produktu" FontSize="20" HorizontalAlignment="Center"/>
-                <TextBox Width="250" Height="30" FontSize="14" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}"/>
+                <TextBox Width="250" Height="30" FontSize="14" Text="{Binding NewName, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}"/>
                 <TextBlock Text="Nazwa producenta" FontSize="20" HorizontalAlignment="Center"/>
                 <TextBox Width="250" Height="30" FontSize="14" Text="{Binding NewProducerName, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}"/>
                 <TextBlock Text="Nazwa kategorii" FontSize="20" HorizontalAlignment="Center"/>

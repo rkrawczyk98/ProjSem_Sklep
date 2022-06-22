@@ -168,9 +168,9 @@
                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Column="0" HorizontalAlignment="Center" Text="{Binding ID}" />
-                                    <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding Quantity}"/>
-                                    <TextBlock Grid.Column="2" HorizontalAlignment="Center" Text="{Binding Price}" />
+                                    <TextBlock Grid.Column="0" HorizontalAlignment="Center" Text="{Binding Name, StringFormat='Nazwa produktu: {0}'}" />
+                                    <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding Quantity, StringFormat='Ilość: {0}'}"/>
+                                    <TextBlock Grid.Column="2" HorizontalAlignment="Center" Text="{Binding Price, StringFormat='Cena: {0}'}" />
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>

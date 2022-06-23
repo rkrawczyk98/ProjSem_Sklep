@@ -23,6 +23,7 @@ namespace ProjSem_Sklep.Views.Product
         private MainWindow _mainWin;
         private ProductWindow _prodWin;
         private RepositoryHolder _repoHolder;
+        private ProductListPage _prodList;
 
         public string newName { get; set; }
 
@@ -32,11 +33,12 @@ namespace ProjSem_Sklep.Views.Product
 
         public EFProduct SelectedProduct { get; set; }
 
-        public EditProductPage(MainWindow mainWin, ProductWindow prodWin, RepositoryHolder repoHolder, EFProduct selectedProduct)
+        public EditProductPage(MainWindow mainWin, ProductWindow prodWin, RepositoryHolder repoHolder, ProductListPage prodList, EFProduct selectedProduct)
         {
             _mainWin = mainWin;
             _repoHolder = repoHolder;
             _prodWin = prodWin;
+            _prodList = prodList;
             DataContext = this;
             SelectedProduct = selectedProduct;
             InitializeComponent();
@@ -48,8 +50,9 @@ namespace ProjSem_Sklep.Views.Product
             SelectedProduct.Quantity = Quantity;
             SelectedProduct.Price = Price;
             _repoHolder.ProdRepo.Save();
-            DataContext = _mainWin; 
+            DataContext = _mainWin;
             _prodWin.Close();
+            _prodList.ProductList_ListBox.Items.Refresh();
         }
 
         private void Anuluj_Button_Click(object sender, RoutedEventArgs e)

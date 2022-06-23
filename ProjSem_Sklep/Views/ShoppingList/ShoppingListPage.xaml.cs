@@ -91,6 +91,7 @@ namespace ProjSem_Sklep.Views.ShoppingList
         {
             ShoppingList.Remove(SelectedProduct);
             LoginPage.Koszyk.Products.Remove(SelectedProduct);
+            ShoppingList_ListBox.Items.Refresh();
         }
     }
 }

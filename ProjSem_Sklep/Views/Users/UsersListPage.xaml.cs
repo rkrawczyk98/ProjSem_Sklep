@@ -81,6 +81,7 @@ namespace ProjSem_Sklep.Views.Users
                 user.IsAdmin = true;
             else user.IsAdmin = false;
             _repoHolder.UserRepo.Save();
+            UserList_ListBox.Items.Refresh();
         }
     }
 }

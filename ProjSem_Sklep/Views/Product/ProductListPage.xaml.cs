@@ -77,19 +77,20 @@ namespace ProjSem_Sklep.Views.Product
             ProductList.Remove(SelectedProduct);
             _repoHolder.ProdRepo.Remove(SelectedProduct);
             _repoHolder.ProdRepo.Save();
+            ProductList_ListBox.Items.Refresh();
         }
 
         private void Edytuj_Button_Click(object sender, RoutedEventArgs e)
         {
             var productWindow = new ProductWindow();
-            productWindow.Content = new EditProductPage(_mainWindow,productWindow, _repoHolder, SelectedProduct);
+            productWindow.Content = new EditProductPage(_mainWindow,productWindow, _repoHolder,this, SelectedProduct);
             productWindow.Show();
         }
 
         private void Dodaj_Button_Click(object sender, RoutedEventArgs e)
         {
             var productWindow = new ProductWindow();
-            productWindow.Content = new AddNewProductPage(_mainWindow, productWindow, _repoHolder);
+            productWindow.Content = new AddNewProductPage(_mainWindow, productWindow, _repoHolder, this);
             productWindow.Show();
         }
     }

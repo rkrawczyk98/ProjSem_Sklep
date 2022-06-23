@@ -144,7 +144,7 @@
                      Grid.Column="1"
                      Style="{StaticResource SearchBox}"/>
             <ContentControl x:Name="contentControl" Grid.Row="1"
-                        Grid.Column="1" Content="{Binding HP_Content}"/>
+                        Grid.Column="1"/>
 
         </Grid>
 

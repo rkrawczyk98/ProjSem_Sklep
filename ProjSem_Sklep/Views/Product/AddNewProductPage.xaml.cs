@@ -46,14 +46,13 @@ namespace ProjSem_Sklep.Views.Product
             var nowyProdukt = new EFProduct() { Name = this.NewName, Quantity = this.Quantity, Price = this.Price };
             _repoHolder.ProdRepo.Add(nowyProdukt);
             _repoHolder.ProdRepo.Save();
-            DataContext = _mainWin;
-            _prodWin.Close();
+            _prodList.ProductList.Add(nowyProdukt);
             _prodList.ProductList_ListBox.Items.Refresh();
+            _prodWin.Close();
         }
 
         private void Anuluj_Button_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = _mainWin;
             _prodWin.Close();
         }
     }

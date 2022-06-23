@@ -43,7 +43,7 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
                 <TextBlock Text="Nazwa produktu" FontSize="20" HorizontalAlignment="Center"/>
-                <TextBox x:Name="productName" Width="250" Height="30" FontSize="14" Text="{Binding newName, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}"/>
+                <TextBox x:Name="productName" Width="250" Height="30" FontSize="14" Text="{Binding NewName, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}"/>
                 <TextBlock Text="Cena" FontSize="20" HorizontalAlignment="Center"/>
                 <TextBox x:Name="price" Width="250" Height="30" FontSize="14" Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ModernTextBox}"/>
                 <TextBlock Text="Stan magazynowy" FontSize="20" HorizontalAlignment="Center"/>

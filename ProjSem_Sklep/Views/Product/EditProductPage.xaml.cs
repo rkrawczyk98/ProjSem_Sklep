@@ -25,7 +25,7 @@ namespace ProjSem_Sklep.Views.Product
         private RepositoryHolder _repoHolder;
         private ProductListPage _prodList;
 
-        public string newName { get; set; }
+        public string NewName { get; set; }
 
         public int Quantity { get; set; }
 
@@ -39,25 +39,23 @@ namespace ProjSem_Sklep.Views.Product
             _repoHolder = repoHolder;
             _prodWin = prodWin;
             _prodList = prodList;
-            DataContext = this;
             SelectedProduct = selectedProduct;
+            DataContext = this;
             InitializeComponent();
         }
 
         private void Zapisz_Button_Click(object sender, RoutedEventArgs e)
         {
-            SelectedProduct.Name = newName;
+            SelectedProduct.Name = NewName;
             SelectedProduct.Quantity = Quantity;
             SelectedProduct.Price = Price;
             _repoHolder.ProdRepo.Save();
-            DataContext = _mainWin;
             _prodWin.Close();
             _prodList.ProductList_ListBox.Items.Refresh();
         }
 
         private void Anuluj_Button_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = _mainWin;
             _prodWin.Close();
         }
     }

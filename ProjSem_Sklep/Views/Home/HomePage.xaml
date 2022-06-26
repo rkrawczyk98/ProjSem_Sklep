@@ -136,13 +136,6 @@
                              Click="Uzytkownicy_Button_Click" 
                              Name="Uzytkownicy_Button"/>
             </StackPanel>
-            <TextBox Width="250"
-                     Height="40"
-                     VerticalContentAlignment="Center"
-                     HorizontalAlignment="Left"
-                     Margin="5"
-                     Grid.Column="1"
-                     Style="{StaticResource SearchBox}"/>
             <ContentControl x:Name="contentControl" Grid.Row="1"
                         Grid.Column="1"/>
 

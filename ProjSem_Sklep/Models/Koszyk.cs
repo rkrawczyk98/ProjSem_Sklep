@@ -7,6 +7,20 @@ namespace ProjSem_Sklep.Models
 {
     public class Koszyk
     {
-        public List<Product> Products = new List<Product>();
+        public List<ProductViewModel> ShoppingList = new List<ProductViewModel>();
+
+        public void Add(Product product)
+        {
+            if (ShoppingList.Find(x => x.ID == product.ID) == null)
+            {
+                ShoppingList.Add(new ProductViewModel() { ID = product.ID, Name = product.Name, Price = product.Price, Quantity = 1 });
+            }
+            else
+            {
+                var productToIncrement = ShoppingList.Find(x => x.ID == product.ID);
+                productToIncrement.Quantity++;
+            }
+        }
     }
 }
+

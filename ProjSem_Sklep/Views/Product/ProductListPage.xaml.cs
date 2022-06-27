@@ -16,6 +16,7 @@ using ProjSem_Sklep.Views.Login_Register;
 using ProjSem_Sklep.Views.ShoppingList;
 using ProjSem_Sklep.Views.Orders;
 using ProjSem_Sklep.Views.Users;
+using ProjSem_Sklep.Models;
 
 namespace ProjSem_Sklep.Views.Product
 {
@@ -42,7 +43,7 @@ namespace ProjSem_Sklep.Views.Product
 
         private void DodajDoKoszyka_Button_Click(object sender, RoutedEventArgs e)
         {
-            LoginPage.Koszyk.Products.Add(SelectedProduct);
+            LoginPage.Koszyk.Add(SelectedProduct);
         }
 
         private void ProductList_ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

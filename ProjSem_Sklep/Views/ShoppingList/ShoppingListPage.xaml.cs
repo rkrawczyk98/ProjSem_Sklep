@@ -17,6 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ProjSem_Sklep.Views.Login_Register;
 using ProjSem_Sklep_Lib.Models;
+using ProjSem_Sklep.Models;
 
 namespace ProjSem_Sklep.Views.ShoppingList
 {
@@ -28,15 +29,15 @@ namespace ProjSem_Sklep.Views.ShoppingList
         private MainWindow _mainWindow;
         private RepositoryHolder _repoHolder;
 
-        public List<EFProduct> ShoppingList { get; set; }
-        public EFProduct SelectedProduct { get; set; }
+        public List<ProductViewModel> ShoppingList { get; set; }
+        public ProductViewModel SelectedProduct { get; set; }
 
         public ShoppingListPage(MainWindow mainWin, RepositoryHolder repoHolder)
         {
             _repoHolder = repoHolder;
             _mainWindow = mainWin;
             DataContext = this;
-            ShoppingList = LoginPage.Koszyk.Products;
+            ShoppingList = LoginPage.Koszyk.ShoppingList;
             InitializeComponent();
         }
 
@@ -63,7 +64,7 @@ namespace ProjSem_Sklep.Views.ShoppingList
         private void ProductList_ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var listbox = (ListBox)sender;
-            var item = (EFProduct)listbox.SelectedItem;
+            var item = (ProductViewModel)listbox.SelectedItem;
             SelectedProduct = item;
         }
 
@@ -90,7 +91,7 @@ namespace ProjSem_Sklep.Views.ShoppingList
         private void Usun_Button_Click(object sender, RoutedEventArgs e)
         {
             ShoppingList.Remove(SelectedProduct);
-            LoginPage.Koszyk.Products.Remove(SelectedProduct);
+            LoginPage.Koszyk.ShoppingList.Remove(SelectedProduct);
             ShoppingList_ListBox.Items.Refresh();
         }
     }

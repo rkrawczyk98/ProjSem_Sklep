@@ -1,5 +1,8 @@
 ﻿namespace ProjSem_Sklep_Lib.Repositories
 {
+    /// <summary>
+    /// Klasa przechowywująca wszystkie repozytoria
+    /// </summary>
     public class RepositoryHolder
     {
         private OrderRepository _ordRepo;

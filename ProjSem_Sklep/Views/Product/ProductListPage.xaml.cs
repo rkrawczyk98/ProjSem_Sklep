@@ -28,8 +28,14 @@ namespace ProjSem_Sklep.Views.Product
         private MainWindow _mainWindow;
         private RepositoryHolder _repoHolder;
 
+        /// <summary>
+        /// Propercja przechowywująca listę produktów
+        /// </summary>
         public List<EFProduct> ProductList { get; set; }
 
+        /// <summary>
+        /// Propercja przechowywująca zaznaczony produkt
+        /// </summary>
         public EFProduct SelectedProduct { get; set; }
 
         public ProductListPage(MainWindow mainWin, RepositoryHolder repoHolder)

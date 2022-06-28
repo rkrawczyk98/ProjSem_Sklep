@@ -25,10 +25,19 @@ namespace ProjSem_Sklep.Views.Product
         private RepositoryHolder _repoHolder;
         private ProductListPage _prodList;
 
+        /// <summary>
+        /// Propercja przyjmująca nazwę dla dodawanego przedmiotu
+        /// </summary>
         public string NewName { get; set; }
 
+        /// <summary>
+        /// Propercja przyjmująca ilość w magazynie dla dodawanego produktu
+        /// </summary>
         public int Quantity { get; set; }
 
+        /// <summary>
+        /// Propercja przyjmująca cenę dla dodawanego produktu
+        /// </summary>
         public decimal Price { get; set; }
 
         public AddNewProductPage(MainWindow mainWin, ProductWindow prodWin, RepositoryHolder repoHolder, ProductListPage prodList)

@@ -25,12 +25,24 @@ namespace ProjSem_Sklep.Views.Login_Register
         private MainWindow _mainWindow;
         private RepositoryHolder _repoHolder;
 
+        /// <summary>
+        /// Propercja przyjmująca nazwę użytkownika
+        /// </summary>
         public string Login { get; set; }
 
+        /// <summary>
+        /// Propercja przyjmująca hasło użytkownika
+        /// </summary>
         public string Password { get; set; }
-
+        
+        /// <summary>
+        /// Zmienna przechowywująca dane użytkownika na potrzeby aktualnie otwartej sesji
+        /// </summary>
         public static CredentialsHolder CredentialsHolder;
 
+        /// <summary>
+        /// Zmienna przechowywująca listę przedmiotów w koszyku
+        /// </summary>
         public static Koszyk Koszyk;
 
         public LoginPage(RepositoryHolder repoHolder, MainWindow mainWin)

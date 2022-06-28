@@ -26,8 +26,14 @@ namespace ProjSem_Sklep.Views.Users
         private MainWindow _mainWindow;
         private RepositoryHolder _repoHolder;
 
+        /// <summary>
+        /// Propercja przechowywująca listę użytkowników
+        /// </summary>
         public List<User> UserList { get; set; }
 
+        /// <summary>
+        /// Propercja przechowywująca zaznaczonego użytkownika
+        /// </summary>
         public User SelectedUser { get; set; }
 
         public UsersListPage(MainWindow mainWin, RepositoryHolder repoHolder)

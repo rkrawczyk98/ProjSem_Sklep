@@ -1,5 +1,8 @@
 ﻿namespace ProjSem_Sklep_Lib.Models
 {
+    /// <summary>
+    /// Klasa określająca relację dla zamówień i produktów
+    /// </summary>
     public class ProductOrder 
     {
         public int ProductId { get; set; }

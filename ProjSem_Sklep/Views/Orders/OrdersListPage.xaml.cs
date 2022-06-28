@@ -26,6 +26,9 @@ namespace ProjSem_Sklep.Views.Orders
         private MainWindow _mainWindow;
         private RepositoryHolder _repoHolder;
 
+        /// <summary>
+        /// Propercja przechowywująca listę zamówień
+        /// </summary>
         public List<Order> OrderList { get; set; }
 
         public OrdersListPage(MainWindow mainWin, RepositoryHolder repoHolder)

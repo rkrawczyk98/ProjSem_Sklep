@@ -26,7 +26,6 @@ namespace ProjSem_Sklep.Views.Home
         private MainWindow _mainWindow;
         private RepositoryHolder _repoHolder;
 
-
         public HomePage(MainWindow mainWin, RepositoryHolder repoHolder)
         {
             _repoHolder = repoHolder;

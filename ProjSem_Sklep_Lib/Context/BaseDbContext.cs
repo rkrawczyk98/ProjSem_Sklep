@@ -58,13 +58,13 @@ namespace ProjSem_Sklep_Lib.Context
             };
 
             modelBuilder.Entity<User>().HasData(
-     new User
-     {
-         ID = 1,
-         Login = "admin",
-         Password = "admin",
-         IsAdmin = true
-     },
+         new User
+         {
+             ID = 1,
+             Login = "admin",
+             Password = "admin",
+             IsAdmin = true
+         },
          new User
          {
              ID = 2,

@@ -25,12 +25,24 @@ namespace ProjSem_Sklep.Views.Product
         private RepositoryHolder _repoHolder;
         private ProductListPage _prodList;
 
+        /// <summary>
+        /// Propercja przyjmująca nową nazwę dla edytowanego produktu
+        /// </summary>
         public string NewName { get; set; }
 
+        /// <summary>
+        /// Propercja przyjmująca nową ilość produktu w magazynie dla edytowanego produktu
+        /// </summary>
         public int Quantity { get; set; }
 
+        /// <summary>
+        /// Propercja przyjmująca nową cenę dla edytowanego produktu
+        /// </summary>
         public decimal Price { get; set; }
 
+        /// <summary>
+        /// Propercja przechowywująca zaznaczony produkt
+        /// </summary>
         public EFProduct SelectedProduct { get; set; }
 
         public EditProductPage(MainWindow mainWin, ProductWindow prodWin, RepositoryHolder repoHolder, ProductListPage prodList, EFProduct selectedProduct)

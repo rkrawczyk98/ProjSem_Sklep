@@ -13,6 +13,10 @@ namespace ProjSem_Sklep_Lib.Repositories
         {
         }
 
+        /// <summary>
+        /// Metoda zwracająca zamówienia wraz z ich relacjami
+        /// </summary>
+        /// <returns></returns>
         public override IEnumerable<Product> GetAll()
         {
             return _dbSet.Include(x => x.Orders).ToList();

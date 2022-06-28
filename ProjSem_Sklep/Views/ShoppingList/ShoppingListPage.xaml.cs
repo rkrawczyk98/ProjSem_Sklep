@@ -29,7 +29,14 @@ namespace ProjSem_Sklep.Views.ShoppingList
         private MainWindow _mainWindow;
         private RepositoryHolder _repoHolder;
 
+        /// <summary>
+        /// Propercja przechowywująca listę produktów znajdujących się w koszyku
+        /// </summary>
         public List<ProductViewModel> ShoppingList { get; set; }
+
+        /// <summary>
+        /// Propercja przechowywująca zaznaczony produkt
+        /// </summary>
         public ProductViewModel SelectedProduct { get; set; }
 
         public ShoppingListPage(MainWindow mainWin, RepositoryHolder repoHolder)

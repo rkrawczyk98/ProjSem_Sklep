@@ -23,12 +23,24 @@ namespace ProjSem_Sklep.Views.Login_Register
         private MainWindow _mainWindow;
         private RepositoryHolder _repoHolder;
 
+        /// <summary>
+        /// Propercja przypisująca nazwę użytkownika na potrzeby rejestracji nowego konta
+        /// </summary>
         public string Login { get; set; }
 
+        /// <summary>
+        /// Propercja przypisująca hasło na potrzeby rejestracji nowego konta
+        /// </summary>
         public string Password { get; set; }
 
+        /// <summary>
+        /// Properjca służąca do sprawdzenia czy użytkownik nie popełnił literówki przy wpisywaniu hasła podczas tworzenia nowego konta
+        /// </summary>
         public string RepeatPassword { get; set; }
 
+        /// <summary>
+        /// Propercja określająca czy dany użytkownik jest administratorem
+        /// </summary>
         public bool IsAdmin { get; set; }
 
         public RegisterPage(MainWindow mainWin, RepositoryHolder repoHolder)
